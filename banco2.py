@@ -8,7 +8,13 @@ saldo = 500
 extrato = ''
 saques = []
 cont_saque_dia = 0
+usuarios = []
 
+def criar_usuario(nome,data_nasc, cpf, end):
+    pass
+
+def criar_conta(conta, usuario):
+    pass
 
 def depositar(valor):
     global saldo, extrato
