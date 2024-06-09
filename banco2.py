@@ -63,12 +63,12 @@ while True:
         exit(0)
     
     elif option == 'a':
-        valor = int(input("Quanto deseja depositar? "))
+        valor = float(input("Quanto deseja depositar? "))
         depositar(valor=valor) 
         sleep(1)
 
     elif option == 'b':
-        saque = int(input("Informe o valor a ser sacado: "))
+        saque = float(input("Informe o valor a ser sacado: "))
         sacar(valor=saque)
         sleep(1)
         
