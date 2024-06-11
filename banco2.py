@@ -53,26 +53,36 @@ def gerar_extrato(saldo, extrato):
 
 def menu():
     while True:
-        option = input("""Selecione a opção desejada:\n(D) Depositar\n(S) Sacar\n(E) Gerar extrato\n
-        (C) Criar Conta\n (L) Listar contas, (U) Criar usuárioPressione a tecla Enter para sair. """)
+        option = input("""Selecione a opção desejada:\n(U) Criar usuário\n(C) Criar conta\n(D) Depositar\n(S) Sacar\n(L) Listar contas\n(E) Gerar extrato\nPressione a tecla Enter para sair.\n""")
 
         # Pega data do dia da consulta para contagem de saques
+        global data
         data = datetime.now().strftime("%d %m %Y")
         if option == '':
             exit(0)
         
-        elif option == 'a':
+        elif option.upper() == 'D':
             valor = float(input("Quanto deseja depositar? "))
             depositar(valor, saldo, extrato) 
             sleep(1)
 
-        elif option == 'b':
+        elif option.upper() == 'S':
             saque = float(input("Informe o valor a ser sacado: "))
             sacar(saque, cont_saque_dia)
             sleep(1)
             
-        elif option == 'c':
-            gerar_extrato()
+        elif option.upper() == 'E':
+            gerar_extrato(saldo, extrato)
+            sleep(1)
+        
+        elif option.upper() == 'C':
+            criar_conta()
+            sleep(1)
+        
+        elif option.upper() == 'U':
+            criar_usuario()
+            sleep(1)
+
         else:
             print("Operação não reconhecida.")
     exit(0)
