@@ -4,8 +4,10 @@ from conta import Conta
 from datetime import datetime
 import historico
 
-class Transacao(ABC):
-    pass
+class Transacao(ABC, Conta):
+    @staticmethod
+    def registrar():
+        pass
 
 class Deposito(Cliente):
     pass
