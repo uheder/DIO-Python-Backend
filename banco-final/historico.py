@@ -1,5 +1,5 @@
-from abc import ABC
-from transacoes import Saque, Deposito
+from transacoes import Saque, Deposito, Transacao
 
-class Transacoes(ABC):
+
+class Historico:
     pass
