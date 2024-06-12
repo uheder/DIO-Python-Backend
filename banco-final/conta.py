@@ -1,5 +1,7 @@
-import historico
 from cliente import Cliente
 
 class Conta(Cliente):
-    pass
+    contas = []
+    def cadastra_conta(self, cliente, agencia):
+        self.cliente = cliente
+        self.agencia = agencia

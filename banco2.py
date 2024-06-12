@@ -38,10 +38,7 @@ def listar_contas(contas):
     for conta in contas:
         cpf = conta['cpf']
         for lista in conta['contas']:
-            print(f"""\n
-            CPF titular: {cpf}\n
-            Agência: {lista['agencia']}\n
-            Nº Conta: {lista['conta']}""")
+            print(f"\nCPF titular: {cpf}\nAgência: {lista['agencia']}\nNº Conta: {lista['conta']}")
     
 def depositar(saldo, valor, extrato, /):
     if valor <= 0:

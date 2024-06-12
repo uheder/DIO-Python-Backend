@@ -1,16 +1,22 @@
 from abc import ABC
-from cliente import Cliente
 from conta import Conta
 from datetime import datetime
-import historico
 
 class Transacao(ABC, Conta):
+    data = datetime.now().strftime('%d/%m%Y %H:%M:%S')
+
     @staticmethod
     def registrar():
         pass
 
-class Deposito(Cliente):
-    pass
+    def depositar(self, saldo, valor):
+        self._saldo = saldo
+        self._valor = valor
+        
 
-class Saque(Cliente):
-    pass
+    def sacar(self, saldo, valor, LIMITE_SAQUE):
+        self._saldo = saldo
+        self._valor = valor
+        self._LIMITE_SAQUE = LIMITE_SAQUE
+        
+
