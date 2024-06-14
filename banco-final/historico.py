@@ -1,5 +1,5 @@
-from transacoes import Saque, Deposito, Transacao
+from transacoes import Transacao
+from conta import Conta
 
-
-class Historico:
+class Historico(Conta):
     pass
