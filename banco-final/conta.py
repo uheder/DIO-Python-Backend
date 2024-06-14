@@ -60,8 +60,28 @@ class Conta(Cliente):
 class ContaCorrente(Conta):
     def __init__(self, limite: float = 500, limite_saques: int = 3) -> None:
         self.limite = limite
-        self.limite_saques = limite_saques
+        self._limite_saques = limite_saques
     
+    def sacar(self, valor: float):
+        total_saques = len(
+            [transacao for transacao in self.historico.transacoes if transacao['tipo']
+             == Saque.__name__]
+        )
+
+        excedeu_saque = valor > self.limite
+        excedeu_limite_saques = total_saques >= self._limite_saques
+
+        if excedeu_saque:
+            print('Erro: Valor de saque excede o limite de saque')
+        elif excedeu_limite_saques:
+            print('Erro: Limite de saques diarios excedido')
+        else:
+            return super().sacar(valor)
+        return False
+    
+    def __str__(self) -> str:
+        return f'Agencia: {self.agencia}\nNum. Conta: {self.numero}\nCliente: {self._cliente}'
+
 class PessoaFisica(Cliente):
     def __init__(self, cpf: int, nome: str, data_nasc: date, endereco: str) -> None:
         self.cpf = cpf
