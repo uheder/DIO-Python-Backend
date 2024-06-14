@@ -22,7 +22,21 @@ class Conta(Cliente):
     def saldo(self) -> float:
         return self._saldo
     
-
+    @property
+    def numero(self) -> int:
+        return self._num_conta
+    @property
+    def agencia(self)-> str:
+        return self._agencia
+    
+    @property
+    def cliente(self)-> Cliente:
+        return self._cliente
+    
+    @property
+    def historico(self)-> Historico:
+        return self._historico
+    
     def sacar(self, valor: float)-> bool:
         if self._saldo - valor < 0:
             return False
@@ -30,7 +44,7 @@ class Conta(Cliente):
         # FIXME implementar funcao registrar na classe Transacao
         Transacao.registrar(saque)
         self_saldo -= valor
-        
+
     def depositar(self, valor: float)-> bool:
         pass
 
