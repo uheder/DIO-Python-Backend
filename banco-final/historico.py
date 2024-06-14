@@ -13,4 +13,7 @@ class Historico(Conta):
             'data': datetime.now().strftime('%d/%m/%Y, %H:%M:%S'),
         })
 
+    @property
+    def transacoes(self):
+        return self._transacoes
 
