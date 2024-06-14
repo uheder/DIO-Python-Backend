@@ -10,3 +10,9 @@ class Conta(Cliente):
 
     
     pass
+
+class PessoaFisica(Cliente):
+    pass
+
+class ContaCorrente(Conta):
+    pass

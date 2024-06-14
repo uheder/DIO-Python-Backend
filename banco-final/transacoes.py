@@ -12,5 +12,8 @@ class Transacao(ABC, Conta):
     def registrar():
         pass
 
-    def sacar(self):
-        pass
+class Saque(Transacao):
+    pass
+
+class Deposito(Transacao):
+    pass
