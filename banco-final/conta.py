@@ -39,14 +39,22 @@ class Conta(Cliente):
     
     def sacar(self, valor: float)-> bool:
         if self._saldo - valor < 0:
+            print('Erro: Saldo insuficiente.')
             return False
-        
-        # FIXME implementar funcao registrar na classe Transacao
-        Transacao.registrar(saque)
+        elif valor < 0:
+            print('Erro: não é possivel sacar menos que 0 reais.')
+            return False
+        print('Saque realizado com sucesso!')
         self_saldo -= valor
+        return True
 
     def depositar(self, valor: float)-> bool:
-        pass
+        if valor <= 0:
+            print('Erro: não é possivel depositar valores menores ou iguais a 0 reais')
+            return False
+        self._saldo += valor
+        print('Deposito realizado com sucesso!')
+        return True
 
 
 class ContaCorrente(Conta):
