@@ -1,8 +1,12 @@
 class Cliente:
-    def __init__(self, cpf: int, nome: str, data_nasc: str, endereco: str, contas: list):
-        self.cpf = cpf
-        self.nome = nome
-        self.data_nasc = data_nasc
+    def __init__(self, endereco: str):
         self.endereco = endereco
-        self.contas = contas
+        self.contas = []
     
+    def realiza_transacao(self, conta, transacao):
+        transacao.registrar(conta)
+
+    def adicionar_conta(self, conta):
+        self.contas.append(conta)
+
+        
