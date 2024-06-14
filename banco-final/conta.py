@@ -58,7 +58,7 @@ class Conta(Cliente):
 
 
 class ContaCorrente(Conta):
-    def __init__(self, limite: float, limite_saques: int) -> None:
+    def __init__(self, limite: float = 500, limite_saques: int = 3) -> None:
         self.limite = limite
         self.limite_saques = limite_saques
     
