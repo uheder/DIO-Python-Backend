@@ -5,12 +5,12 @@ from datetime import datetime
 import historico
 
 class Transacao(ABC, Conta):
+    def __init__(self, data: datetime):
+        super().__init__(Conta.saldo)
+        self.data = data
     @staticmethod
     def registrar():
         pass
 
-class Deposito(Cliente):
-    pass
-
-class Saque(Cliente):
-    pass
+    def sacar(self):
+        pass
