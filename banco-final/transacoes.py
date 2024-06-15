@@ -1,4 +1,4 @@
-from abc import ABC
+from abc import ABC, abstractmethod, property
 from conta import Conta
 from datetime import datetime
 
@@ -7,8 +7,13 @@ class Transacao(ABC, Conta):
         super().__init__(Conta.saldo)
         self.data = data
         
-    @staticmethod
-    def registrar():
+    @abstractmethod
+    def registrar(self):
+        pass
+    
+    @property
+    @abstractmethod
+    def valor(self):
         pass
 
 class Saque(Transacao):
