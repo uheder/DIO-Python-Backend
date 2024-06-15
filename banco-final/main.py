@@ -6,6 +6,7 @@ def menu():
     while True:
         option = input("""Selecione a opção desejada:\n(U) Criar usuário\n(C) Criar conta\n(D) Depositar\n(S) Sacar\n(L) Listar contas\n(E) Gerar extrato\nPressione a tecla Enter para sair.\n""")
 
+    ### FIXME implementar logica de escolha ###
         
     exit(0)
 
