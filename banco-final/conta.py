@@ -1,7 +1,7 @@
 from cliente import Cliente
 from datetime import date
 from historico import Historico
-from transacoes import Transacao
+import transacoes
 
 
 class Conta(Cliente):
@@ -65,7 +65,7 @@ class ContaCorrente(Conta):
     def sacar(self, valor: float):
         total_saques = len(
             [transacao for transacao in self.historico.transacoes if transacao['tipo']
-             == Saque.__name__]
+             == transacoes.Saque.__name__]
         )
 
         excedeu_saque = valor > self.limite
