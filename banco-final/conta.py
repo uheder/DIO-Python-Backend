@@ -1,5 +1,4 @@
 from cliente import Cliente
-from datetime import date
 from historico import Historico
 import transacoes
 
@@ -83,7 +82,7 @@ class ContaCorrente(Conta):
         return f'Agencia: {self.agencia}\nNum. Conta: {self.numero}\nCliente: {self._cliente}'
 
 class PessoaFisica(Cliente):
-    def __init__(self, cpf: int, nome: str, data_nasc: date, endereco: str) -> None:
+    def __init__(self, cpf: int, nome: str, data_nasc: str, endereco: str) -> None:
         self.cpf = cpf
         self.nome = nome
         self.data_nasc = data_nasc
