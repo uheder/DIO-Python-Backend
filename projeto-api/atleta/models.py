@@ -3,7 +3,7 @@ from contrib.models import BaseModel
 from sqlalchemy import DateTime, Float, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column
 
-class AtletaModels(BaseModel):
+class AtletaModel(BaseModel):
     __tablename__ = 'atletas'
     
     pk_id: Mapped[int] = mapped_column(Integer, primary_key=True)
